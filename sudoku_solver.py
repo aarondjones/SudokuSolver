@@ -49,15 +49,6 @@ def get_sub_grid(matrix, x, y):
     return sub_grid
 
 
-def get_sub_grid_coords(a, b):
-    # compose list of tubles that make up this sub-grid 
-    sub_grid_positions = []
-    for u in range(3):
-        for p in range(3):
-            this_pos = ((a * 3 + u), (b * 3 + p))
-            sub_grid_positions.append(this_pos)    
-
-    return sub_grid_positions
 
 
 # start main program

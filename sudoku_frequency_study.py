@@ -42,37 +42,36 @@ def get_sub_grid_coords(a, b):
 
 ############### Main
 
-solve_it = True
-while solve_it:
-    solve_it = False
-    for x in range(3):
-        for y in range(3):
-    x = 0
-    y = 0
-    frequency_tbl = [[] for num in range(10)]
-    this_sub_grid = get_sub_grid_coords(x, y)
-    for box in this_sub_grid:
-        a = box[0]
-        b = box[1]
-        these_possible = grid_possible[a][b]
-        print(str(these_possible))
+
+    
+#    for x in range(3):
+#        for y in range(3):
+x = 0
+y = 0
+frequency_tbl = [[] for num in range(10)]
+this_sub_grid = get_sub_grid_coords(x, y)
+for box in this_sub_grid:
+    a = box[0]
+    b = box[1]
+    these_possible = grid_possible[a][b]
+    print(a, b, str(these_possible))
         
-        # if the box isn't solved, then there are more than one possibilities
-        if len(these_possible) > 1:
-            for value in these_possible:
-                coordinate = (a, b)
-                # put the coorindates of the box in the correct frequency bucket
-                frequency_tbl[value].append(coordinate)
+    # if the box isn't solved, then there are more than one possibilities
+    if len(these_possible) > 1:
+        for value in these_possible:
+            coordinate = (a, b)
+            # put the coorindates of the box in the correct frequency bucket
+            frequency_tbl[value].append(coordinate)
 
 
-    print(frequency_tbl)
-    i = 0
-    for coord_list in frequency_tbl:
-        if len(coord_list) == 1:
-            print("box: " + str(coord_list) + " is " + str(i))
-            # write value back to box
-            solve_it = True
-        i+=1
+print(frequency_tbl)
+i = 0
+for coord_list in frequency_tbl:
+    if len(coord_list) == 1:
+        print("box: " + str(coord_list) + " is " + str(i))
+        # write value back to box
+        #solve_it = True
+    i+=1
         
     
     
